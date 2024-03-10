@@ -1,5 +1,5 @@
-import { createStore } from "redux";
-import { CounterReducer } from "./Redux/Reducers/Counter.Reducer";
-
-const store = createStore(CounterReducer);
+import { applyMiddleware, createStore } from "redux";
+import { thunk } from "redux-thunk";
+import { todosReducer } from "./Redux/Reducers/Todos.Reducers";
+const store = createStore(todosReducer, applyMiddleware(thunk));
 export { store };
